@@ -1,14 +1,8 @@
 import React, { useState } from 'react'
-<<<<<<< HEAD
 import Box from './components/Box'
 
 const App = () => {
-  const [inputNum, setInputNum] = useState([])
-=======
-
-const App = () => {
-  const [inputNum, setInputNum] = useState('')
->>>>>>> 2c5f014bd71afe309217cde50ff3870b513f11b9
+  const [inputNum, setInputNum] = useState([124,23,44,12,23,23,24,23,425,675,75,56])
 
   const inputChange =(e)=>{
     setInputNum(e.target.value)
@@ -24,7 +18,6 @@ const App = () => {
   }
   return (
     <div className='p-8'>
-      <button className='bg-amber-400 p-2' onClick={hexCodeGenerator}>gethexcode</button>
 
       <div className='flex justify-between py-4 px-6 bg-fuchsia-500 rounded-2xl mx-15'>
         <h1 className='font-bold text-white text-2xl'>🎨 Gradeient Generator</h1>
@@ -39,14 +32,14 @@ const App = () => {
         </div>
       </div>
 
-      <div className='flex justify-start flex-wrap gap-4 my-4'>
-      <Box hexCodeGenerator={hexCodeGenerator} />
-      <Box hexCodeGenerator={hexCodeGenerator} />
-      <Box hexCodeGenerator={hexCodeGenerator} />
-      <Box hexCodeGenerator={hexCodeGenerator} />
-      <Box hexCodeGenerator={hexCodeGenerator} />
-
+      <div className='flex justify-center flex-wrap gap-4 my-4'>  
+        {inputNum.map((elem,idx)=>{
+          return (
+                 <Box hexCodeGenerator={hexCodeGenerator} />
+        )
+      })}
       </div>
+
     </div>
   )
 }
