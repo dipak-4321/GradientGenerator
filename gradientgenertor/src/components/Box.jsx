@@ -1,11 +1,14 @@
 import React from 'react'
 
-const Box = ({hexCodeGenerator}) => {
+const Box = (props) => {
+  console.log(props)
   return (
     
         <div style={{
-          background : hexCodeGenerator()
-        }} className='h-55 w-67 rounded-2xl'></div>
+          background : props.bgcolor
+        }} className='h-55 w-67 rounded-2xl relative'>
+
+        </div>
 
   )
 }
