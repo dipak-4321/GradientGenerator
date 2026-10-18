@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import Box from './components/Box'
 
 const App = () => {
-  const [inputNum, setInputNum] = useState(5)
+  const [inputNum, setInputNum] = useState(12)
   const [gradients, setGradients] = useState([])
 
   const inputChange =(e)=>{
@@ -26,13 +26,16 @@ const App = () => {
     const  degree = Math.floor(Math.random() * 360)
 
     const bgcolor =`linear-gradient(${degree}deg,${color1},${color2})`
+    const css = `background : linear-gradient(${degree}deg,${color1},${color2})`
 
     copy.push(
-      {gradient : bgcolor })
+      {gradient : bgcolor,
+        code : css
+       })
     }
     setGradients(copy)
-    console.log(copy);
-    console.log(copy[0])
+    // console.log(copy);
+    // console.log(copy[0])
     
     }
 
@@ -42,7 +45,9 @@ const App = () => {
   return (
     <div className='p-8'>
 
-      <div className='flex justify-between py-4 px-6 bg-fuchsia-500 rounded-2xl mx-15'>
+      <div className='flex justify-between py-4 px-6 bg-fuchsia-500 rounded-2xl mx-15' style={{
+        backgroundColor : hexCodeGenerator()
+      }}>
         <h1 className='font-bold text-white text-2xl'>🎨 Gradeient Generator</h1>
         <div className='flex gap-6'>
           <input value={inputNum} onChange={(e)=>{
@@ -58,7 +63,7 @@ const App = () => {
       <div className='flex justify-center flex-wrap gap-4 my-4'>  
         {gradients.map((elem,idx)=>{
           return (
-                 <Box bgcolor={elem.gradient} key={idx} />
+                 <Box bgcolor={elem.gradient} key={idx} code={elem.code} />
         )
       })}
       </div>
