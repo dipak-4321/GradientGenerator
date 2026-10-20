@@ -68,10 +68,13 @@ const App = () => {
           }} className='bg-white  rounded-lg outline-none py-0.5 px-2 w-25' type="text" placeholder='15' />
            <select onChange={(e)=>{
             setType(e.target.value)
-           }} className='rounded-lg outline-none p-0.5 text-white  bg-blue-400 w-30'>
+           }}   className="bg-fuchsia-500 text-white border border-fuchsia-400 rounded-xl px-4 py-2.5 w-36 outline-none cursor-pointer shadow-lg hover:border-blue-600 focus:ring-2 focus:ring-blue-500  transition duration-300">
             <option value="Gradient">Gradient</option>
             <option value="Radial">Radial</option>
            </select>
+           <button onClick={()=> {
+            colorGenerator()
+           }} className='bg-green-600 text-white py-0.5 px-4 active:scale-95 rounded-xl'>Generate</button>
         </div>
       </div>
 
