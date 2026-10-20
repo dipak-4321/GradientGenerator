@@ -58,23 +58,23 @@ const App = () => {
   return (
     <div className='p-8'>
 
-      <div className='flex justify-between py-4 px-6 bg-fuchsia-500 rounded-2xl mx-15' style={{
+      <div className='flex justify-between py-4 px-6 bg-fuchsia-500 rounded-2xl md:mx-15' style={{
         backgroundColor : hexCodeGenerator()
       }}>
-        <h1 className='font-bold text-white text-2xl'>🎨 Gradeient Generator {type}</h1>
-        <div className='flex gap-6'>
+        <h1 className='font-bold text-white text-2xl my-auto '>🎨 Gradeient Generator {type}</h1>
+        <div className='md:flex gap-6 items-center ml-1 '>
           <input value={inputNum} onChange={(e)=>{
             inputChange(e)
-          }} className='bg-white  rounded-lg outline-none py-0.5 px-2 w-25' type="text" placeholder='15' />
+          }} className='bg-white h-11 rounded-lg outline-none py-0.5 px-2 w-full' type="text" placeholder='15' />
            <select onChange={(e)=>{
             setType(e.target.value)
-           }}   className="bg-fuchsia-500 text-white border border-fuchsia-400 rounded-xl px-4 py-2.5 w-36 outline-none cursor-pointer shadow-lg hover:border-blue-600 focus:ring-2 focus:ring-blue-500  transition duration-300">
+           }}   className="bg-fuchsia-500 h-11 text-white border border-fuchsia-400 rounded-xl px-4 py-2.5 w-full mt-1 outline-none cursor-pointer shadow-lg hover:border-blue-600 focus:ring-2 focus:ring-blue-500  transition duration-300">
             <option value="Gradient">Gradient</option>
             <option value="Radial">Radial</option>
            </select>
            <button onClick={()=> {
             colorGenerator()
-           }} className='bg-green-600 text-white py-0.5 px-4 active:scale-95 rounded-xl'>Generate</button>
+           }} className='bg-green-600 h-11 text-white py-0.5 px-4 active:scale-95 rounded-xl w-full mt-1'>Generate</button>
         </div>
       </div>
 
