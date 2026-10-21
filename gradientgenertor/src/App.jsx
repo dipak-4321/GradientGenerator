@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Box from './components/Box'
 
+
 const App = () => {
   const [inputNum, setInputNum] = useState(12)
   const [type, setType] = useState('Gradient')
@@ -86,8 +87,6 @@ const App = () => {
       })}
       </div>
       
-
-     
     </div>
   )
 }
